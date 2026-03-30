@@ -1,0 +1,349 @@
+@import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;1,400&family=Caveat&display=swap');
+
+/* tokens  */
+:root {
+  --cream:  #fdf6ec;
+  --ink:    #2c1e0f;
+  --spice:  #c0622b;
+  --green:  #4a7c59;
+  --faint:  #e8d9c5;
+}
+
+/* reset */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* base  */
+body {
+  background-color: var(--cream);
+  color: var(--ink);
+  font-family: 'Lora', serif;
+  min-height: 100vh;
+}
+
+/* watermark */
+.spice-mark {
+  position: fixed;
+  font-family: 'Caveat', cursive;
+  font-size: 0.85rem;
+  color: var(--faint);
+  pointer-events: none;
+  user-select: none;
+}
+
+/* ── share page layout (index + story pages) ── */
+.index-page,
+.story-page {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 4rem 2rem;
+  gap: 1.25rem;
+}
+
+/* ── accent colours ── */
+.accent-spice { color: var(--spice); font-style: italic; }
+.accent-green  { color: var(--green); font-style: italic; }
+
+/* ── divider ── */
+.divider {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  width: 50%;
+}
+
+.divider-line {
+  flex: 1;
+  height: 1px;
+  background: var(--faint);
+}
+
+.divider-dot {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--spice);
+  opacity: 0.6;
+}
+
+/* ── index page ── */
+.index-eyebrow {
+  font-family: 'Caveat', cursive;
+  font-size: 1rem;
+  color: var(--spice);
+}
+
+.index-title {
+  font-size: clamp(1.5rem, 4vw, 2rem);
+  font-weight: 400;
+  line-height: 1.6;
+}
+
+.index-subtitle {
+  font-size: 0.95rem;
+  line-height: 1.75;
+  opacity: 0.75;
+}
+
+.index-prompt {
+  font-family: 'Caveat', cursive;
+  font-size: 1rem;
+  color: var(--spice);
+  opacity: 0.7;
+}
+
+.index-entry-links {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+
+.index-entry-link {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 0.2rem;
+  padding: 0.8rem 1.6rem;
+  border: 1.5px solid var(--faint);
+  border-radius: 6px;
+  text-decoration: none;
+  font-family: 'Caveat', cursive;
+  font-size: 1.2rem;
+  color: var(--ink);
+  transition: border-color 0.2s, color 0.2s;
+}
+
+.index-entry-link .link-sub {
+  font-family: 'Lora', serif;
+  font-style: italic;
+  font-size: 0.75rem;
+  opacity: 0.6;
+}
+
+.index-link-roti:hover   { border-color: var(--spice); color: var(--spice); }
+.index-link-baigan:hover { border-color: var(--green);  color: var(--green); }
+
+.index-hint {
+  font-style: italic;
+  font-size: 0.85rem;
+  opacity: 0.5;
+}
+
+/* culture link on index */
+.index-culture-link {
+  font-family: 'Caveat', cursive;
+  font-size: 0.95rem;
+  color: var(--ink);
+  opacity: 0.6;
+  text-decoration: none;
+  border-bottom: 1px solid var(--faint);
+  padding-bottom: 2px;
+}
+
+.index-culture-link:hover {
+  opacity: 1;
+  border-color: var(--green);
+  color: var(--green);
+}
+
+/*  story pages  */
+.page-nav {
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.nav-back {
+  font-family: 'Caveat', cursive;
+  font-size: 0.95rem;
+  color: var(--ink);
+  opacity: 0.5;
+  text-decoration: none;
+}
+
+.nav-back:hover { opacity: 1; }
+
+.page-eyebrow {
+  font-family: 'Caveat', cursive;
+  font-size: 1rem;
+  color: var(--spice);
+}
+
+.page-title {
+  font-size: 2rem;
+  font-weight: 400;
+}
+
+.story-fragment {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.story-fragment p {
+  font-size: 0.95rem;
+  line-height: 1.85;
+  opacity: 0.9;
+}
+
+.page-hint {
+  font-style: italic;
+  font-size: 0.85rem;
+  opacity: 0.5;
+}
+
+.story-img {
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 8px;
+  opacity: 0.9;
+}
+
+/*  inline story links  */
+.story-link {
+  font-family: 'Lora', serif;
+  font-size: 0.9rem;
+  font-style: italic;
+  text-underline-offset: 3px;
+  text-decoration-thickness: 1px;
+  transition: opacity 0.2s;
+}
+
+.link-spice { color: var(--spice); }
+.link-green  { color: var(--green); }
+
+.story-link:hover { opacity: 0.6; }
+
+/*  inline button (e.g. "just cooks")  */
+.inline-btn {
+  font-family: 'Lora', serif;
+  font-size: 0.95rem;
+  color: var(--green);
+  border: 1px solid var(--green);
+  padding: 0.15rem 0.5rem;
+  border-radius: 4px;
+  text-decoration: none;
+}
+
+.inline-btn:hover { opacity: 0.6; }
+
+/*  page buttons  */
+.page-btn {
+  font-family: 'Caveat', cursive;
+  font-size: 1.1rem;
+  padding: 0.6rem 1.4rem;
+  border-radius: 6px;
+  text-decoration: none;
+  transition: opacity 0.2s;
+}
+
+.btn-green { border: 1.5px solid var(--green); color: var(--green); }
+.btn-spice { border: 1.5px solid var(--spice); color: var(--spice); }
+
+.btn-green:hover,
+.btn-spice:hover { opacity: 0.6; }
+
+/*  ingredient list  */
+.ingredient-list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+  width: 100%;
+}
+
+.ingredient-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 60%;
+  border-bottom: 1px solid var(--faint);
+  padding-bottom: 0.5rem;
+}
+
+.ingredient-name {
+  font-style: italic;
+  color: var(--ink);
+}
+
+.ingredient-amount {
+  font-family: 'Caveat', cursive;
+  font-size: 1rem;
+  color: var(--spice);
+}
+
+/*  home page  */
+.home-line {
+  font-size: 1.4rem;
+  font-weight: 400;
+  line-height: 1.8;
+  font-style: italic;
+}
+
+.home-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+/*  restaurant list  */
+.restaurant-list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.25rem;
+  width: 100%;
+}
+
+.restaurant-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.25rem;
+  width: 70%;
+  border-bottom: 1px solid var(--faint);
+  padding-bottom: 1rem;
+}
+
+.restaurant-name {
+  font-family: 'Caveat', cursive;
+  font-size: 1.2rem;
+  color: var(--spice);
+}
+
+.restaurant-detail {
+  font-size: 0.85rem;
+  line-height: 1.7;
+  opacity: 0.75;
+  font-style: italic;
+}
+
+/*  fade in animation  */
+@keyframes fadeDown {
+  from {
+    opacity: 0;
+    transform: translateY(-16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.index-page > *,
+.story-page > * {
+  animation: fadeDown 0.8s ease forwards;
+}
